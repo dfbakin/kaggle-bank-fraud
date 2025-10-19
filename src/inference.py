@@ -28,5 +28,5 @@ if __name__ == "__main__":
         model,
         df_loader,
         test_filepath="data/test.csv",
-        submission_filepath="submissions/catboost_submission.csv"
+        submission_filepath="data/catboost_submission.csv"
     )
