@@ -1,0 +1,19 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: kaggle-bank-fraud:latest
+    # Keep your current repo structure working AND satisfy strict /input and /output mounts:
+    volumes:
+      # Mount host data to both /app/data (so code keeps working) and /input (strict requirement)
+      - ./data:/app/data
+      - ./data:/input
+      # Mount models to code path and optionally under /input as well
+      - ./models:/app/models
+      - ./models:/input/models
+      # Mount submissions to code path and to /output (strict requirement)
+      - ./submissions:/app/submissions
+      - ./submissions:/output
+    # Uses CMD from Dockerfile: poetry run python src/inference.py
+    restart: "no"
