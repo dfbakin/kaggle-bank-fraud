@@ -8,7 +8,12 @@ def create_submission(model, df_loader, test_filepath, submission_filepath):
 
     test_predictions = np.argmax(model.predict_proba(X_test_processed), axis=1)
 
-    submission_df = pd.read_csv("data/sample_submission.csv")
+    if os.path.exists("data/sample_submission.csv"):
+        submission_df = pd.read_csv("data/sample_submission.csv")
+    elif os.path.exists("data/sample_submition.csv"):
+        submission_df = pd.read_csv("data/sample_submition.csv")
+    else:
+        raise FileNotFoundError
     submission_df["prediction"] = test_predictions
 
     submission_df.to_csv(submission_filepath, index=False)
