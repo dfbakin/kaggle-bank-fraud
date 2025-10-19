@@ -18,4 +18,3 @@ RUN rm -rf ./app && mkdir -p /app/input /app/output
 COPY src /app/src
 
 CMD ["poetry", "run", "python", "src/inference.py"]
-# CMD ["ls", "src"]

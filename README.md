@@ -34,7 +34,10 @@ poetry run python src/train.py
 docker compose up
 ```
 
-В папке `data` появится файл `submission.csv`, который можно отправить на Kaggle.
+- В папке `data` появится файл `submission.csv`, который можно отправить на Kaggle.
+- Также появится график плотности распределения предсказанных скоров (`data/predicted_scores_density.png`)
+- Также появится JSON файл с feature importance для используемое в инференсе модели (`data/top_5_feature_importances.json`)
+
 
 # Использоние argparse
 
