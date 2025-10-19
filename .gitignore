@@ -1,0 +1,10 @@
+kaggle.json
+poetry.lock
+*.cbm
+*.pkl
+*.joblib
+
+catboost_info
+__pycache__
+submissions
+data
